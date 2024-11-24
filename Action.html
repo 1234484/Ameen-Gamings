@@ -1,290 +1,146 @@
 <html>
 <head>
-<link rel="icon" href="Ameen Gaming.png" type="image">
+    <link rel="icon" href="./Images/Ameen Gaming.png" type="image">
     <title>Action</title>
+</head>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
-<style>
-        *{
-		margin:0;
-		padding:0;
-		font-family:'Poppins', sans-serif;
-		box-sizing:border-box;
-		}
-        .bg{
-            background-color:black;
-            background-size:cover;
-            width: 100%;
-            height: 1100;
-        }
-        .logo{
-                width: 13%;
-                height: 13%;
-                margin-top: 4px;
-               margin-left: 2px;
-               margin-right: 3px;
-        }
-        .goal{
-            color: white;
-            font-size: 49px;
+</head>    
+<body>
+   <div class="bg">
 
-        }
-        .btn{
-		color:white;
-		background:green;
-		height:50px;
-		width:190px;
-		border-radius:6px;
-		font-size:19px;
-		cursor:pointer;
-		position:relative;
-		transition:0.5s all;
-		text-decoration:none;
-		overflow:hidden;
-		margin-left:20px;
-		margin-right:20px;
-			border:green;
-			align-items:center;
-		}
-		 nav ul li a:hover{
-        text-decoration:none;
-        color:seagreen;
-        font-size:15px;
-        border-bottom:2px solid yellow;
-        }
-    
-		.btn:hover{
-		background:yellow;
-		}
 
-        nav{
-		padding:30px 0 15px;
-		display:flex;
-		align-items:center;
-		justify-content:space-between;
-		border-bottom:1px solid #bababa;
-		}
-		nav ul li{
-		display:inline-block;
-		list-style:none;
-		margin-top:10px;
-		margin-bottom:10px;
-		margin-right:110px;
-		}
-		nav ul li a{
-		text-decoration:none;
-		color:#fff;
-		font-size:15px;
-		}
-        .search{
-        background:transparent;
-        width:2100px;
-        outline:0px;
-        border:0px;
-        width:230px;
-        border:3px solid blue;
-        border-radius:28px;
-        padding:08px;
-        color: white;
-        }
+<h2>Modal Login Form</h2>
+
+<button id="button" onclick="document.getElementById('id01').style.display='block'" style="width:100%; margin-top: 0;">Login</button>
+
+<div id="id01" class="modal">
+  
+  <form class="modal-content animate" action="/action_page.php" method="post">
+    <div class="imgcontainer">
+      <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
+      <img src="Images/Ameen Gaming.png" alt="Avatar" class="avatar">
+    </div>
+
+    <div class="container">
+      <label for="uname"><b>Username</b></label>
+      <input type="text" placeholder="Enter Username" name="uname" required>
+
+      <label for="psw"><b>Password</b></label>
+      <input type="password" placeholder="Enter Password" name="psw" required>
         
-       .do{
-                content:'';
-                text-decoration:none;
-                border-bottom:2px solid blue;
-                padding:10px;
-                transition:0.4s linear;
-                letter-spacing:2px;
-                }
-                ::placeholder{
-                    color: white;
+      <button id="button" type="submit">Login</button>
+      <label>
+        <input type="checkbox" checked="checked" name="remember"> Remember me
+      </label>
+    </div>
 
-                }
-                .red{
-                    color:#fff;
-                }
-				  /* product start */
-    .products_wrapper{
-        display: grid;
-        grid-template-columns: repeat(4,1fr);
-        margin: 5rem 0;
-        grid-gap:2rem ;
+    <div class="container" style="background-color:#f1f1f1">
+      <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
+      <span class="psw">Forgot <a href="#">password?</a></span>
+    </div>
+  </form>
+</div>
 
-    }
-    .product{
-        background-color: white;
-        border-radius: 5px;
-        cursor: pointer;
-        height: 36rem;
-    }
-    .set{
-        width: 100%;
-        object-fit: cover;
-        border-radius: 5px;
-        height: 70%;
-    }
-    .content{
-        padding: 1rem;
-    }
-    .content .title{
-        font-size: 1rem;
-        color:#2c3e50;
-    }
-    .content .release_date{
-        color: #bdc3c7;
-    }
-    .content .Download{
-        background-color: #2c3e50;
-        padding: 0.5rem;
-        width: 60%;
-        color: #fff;
-        margin: 0.5rem 0;
-    }
-    .button{
-		color:white;
-		background:green;
-		height:40px;
-		width:190px;
-		border-radius:12px;
-		font-size:19px;
-		cursor:pointer;
-		position:relative;
-		transition:0.5s all;
-		text-decoration:none;
-		overflow:hidden;
-		
-			border:green;
-			align-items:center;
-		}
-		.button:hover{
-		background:seagreen;
-        }
-   .footer{
-            background:#2C393C ;
-          
-            background-size: cover;
-            background-repeat: no-repeat;
+<script>
+// Get the modal
+var modal = document.getElementById('id01');
 
-            }
-            .links{
-                list-style: none;
-                text-decoration: none;
-                color: whitesmoke;
-                display: inline-block;
-            }
-            .links a{
-            text-decoration: none;
-            text-align: center;
-                color: whitesmoke;
-                padding:30px  140px;
-                font-size: 25px;
-                font-weight: 300;
-            }
-            .links a:hover{
-                color: yellow;
-                border-bottom: 2px solid turquoise;
-            }
-            .load{
-                width:17%;
-                margin: 15px;
-                cursor: pointer;
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+}
+</script>
 
-            }
-            .link{
-                margin-top: 50px;
-                font-size: 26px;
-                font-weight:600;
-                list-style: none;
-                margin-left: 160px;
-              text-align:center ;  
-            }
-            .link a{
-                text-decoration: none;
-                color: snow;
-                letter-spacing:2px ;
-                word-spacing: 17px;
-                
-            }
-            .link a:hover{
-                color: springgreen;
-                letter-spacing:3px ;
-                word-spacing: 20px;
-                border-bottom: 2px solid skyblue;
-                padding-bottom: 10px;
-            }
-            .word{
-                color: greenyellow;
-                letter-spacing:2px ;
-                word-spacing: 13px;
-                font-size: 31px;
-                font-weight: 700;
-                margin-top: 136px;
-                cursor: pointer;
-              text-align: center;
-              align-items: center;
+     <div class="profile-dropdown">
+        <div onclick="toggle()" class="profile-dropdown-btn">
+          <div class="profile-img">
+            <i class="fa-solid fa-circle"></i>
+          </div>
 
-            }
-            .btn3{
-                color:yellow;
-                width: 230px;
-                height: 60px;
-                background-color: teal;
-                font-size: x-large;
-                cursor: pointer;
-                font-weight: 700;
-                border: 3px solid teal;
-                border-radius: 35px;
-                border-top-right-radius:0px ;
-            }
-            .btn3:hover{
-                color: yellowgreen;
-                border-top-right-radius:35px ;
-            }
-            .btn4{
-                color:white;
-                width: 230px;
-                height: 60px;
-                background-color: tan;
-                font-size: x-large;
-                cursor: pointer;
-                font-weight: 700;
-                border: 3px solid tan;
-                border-radius: 35px;
-                border-top-right-radius:0px ;
-                float: right;
-                margin-top: 40px;
-                margin-right: 20px;
-                
-            }
-            .btn4:hover{
-                color: black;
-                border-top-right-radius:35px ;
-                background-color: grey;
-                border: 2px solid grey;
-                border-bottom-left-radius:0px ;
-            }
-			.anchor{
-			background-color:yellowgreen;
-			
-			}
-		
-</style>
-   </head>    
-<header>
-     <div class="bg">
-     <div class="goal"><img src="./Ameen Gaming.png" class="logo">Ameen Gaming </div>
-        
+          <span
+            >Ameen Gaming
+            <i class="fa-solid fa-angle-down"></i>
+          </span>
+        </div>
+        <li class="profile-dropdown-list-item">
+          <a href="./index.html">
+            <i class="fa-solid fa-house"></i>
+            Home
+          </a>
+        </li>
+        <ul class="profile-dropdown-list">
+          <li class="profile-dropdown-list-item">
+            <a href="./About Us.html">
+              <i class="fa-regular fa-user"></i>
+              About Us
+            </a>
+          </li>
 
-    <nav>
-     <ul>
-               <li><a href="./Ameen Gaming.html">Home</a></li>
-        <li><a href="./About Us.html">About Us</a></li>
-        <li><a href="./Help Us.html">Help Us</a></li>
-        <li><a href="./Action.html">Action</a></li>
-        <li><a href="./Fighting.html">Fighting</a></li>
-        <li><a href="./Racing.html">Racing</a></li>
-         <li><a href="./Cricket.html">Cricket</a></li>
-    </ul>
-    </nav>
+         
+
+          <li class="profile-dropdown-list-item">
+            <a href="./veiws.html">
+              <i class="fa-solid fa-chart-line"></i>
+              Analytics
+            </a>
+          </li>
+          <li class="profile-dropdown-list-item">
+            <a href="./Action.html">
+              <i class="fa-regular fa-gamepad" style="color: #ffffff;"></i>
+             Action Games
+            </a>
+          </li>
+          <li class="profile-dropdown-list-item">
+            <a href="./Racing.html">
+              <i class="fa-regular fa-gamepad" style="color: #ffffff;"></i>
+              Racing Games
+            </a>
+          </li>
+          <li class="profile-dropdown-list-item">
+            <a href="./Fighting.html">
+              <i class="fa-regular fa-gamepad" style="color: #ffffff;"></i>
+              Fighting Games
+            </a>
+          </li>
+          <li class="profile-dropdown-list-item">
+            <a href="./Cricket.html">
+              <i class="fa-regular fa-gamepad" style="color: #ffffff;"></i>
+              Cricket Games
+            </a>
+          </li>
+
+          <li class="profile-dropdown-list-item">
+            <a href="./new updates.html">
+              <i class="fa-solid fa-sliders"></i>
+              New Uptates
+            </a>
+          </li>
+
+          <li class="profile-dropdown-list-item">
+            <a href="./Help Us.html">
+              <i class="fa-regular fa-circle-question"></i>
+              Help & Support
+            </a>
+          </li>
+          <hr />
+
+          <li class="profile-dropdown-list-item">
+            <a onclick="document.getElementById('id01').style.display='block'" style="width:80%;">
+              <i class="fa-solid fa-arrow-right-from-bracket"></i>
+              Log in or out
+            </a>
+          </li>
+        </ul>
+      </div>
+    </nav><br>
+
+    <script src="script.js"></script>
+     <a class="Uptates" href="./new updates.html">New Updates</a>   
 	 <main>
         <div class="container">
             <div class="products_wrapper">
@@ -312,7 +168,7 @@
                 </div>
 					<div class="product">
                     <div class="pr_img">
-                        <img src="./san-vice.webp" class="set">
+                        <img src="./download (4).jpg" class="set">
                     </div>
 				<div class="content">
                         <h3 class="title">GTA San-Vice</h3>
