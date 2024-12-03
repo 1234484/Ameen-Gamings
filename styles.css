@@ -556,6 +556,16 @@ span.psw {
 .p{
   font-size: xx-large;
 }
+ #preloader img{
+ margin: auto;
+  width: 100%;
+}
+#content{
+    display: none;
+}
+.any{
+    display: none;
+}
 
 
 
